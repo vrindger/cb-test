@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'corsheaders',
 
     #local apps
-    'users'
+    'users',
+    'messaging',
 
 ]
 

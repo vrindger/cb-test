@@ -50,7 +50,7 @@ const Signup = () => {
   return (
     <div>
       {loading === false && <h1>Signup</h1>}
-      {errors === true && <h2>Cannot signup with provided credentials</h2>}
+      {errors === true && <h2>Cannot signup with provided credentials. Check whether the password matches and has upper and lower case characters.</h2>}
       <form onSubmit={onSubmit}>
         <label htmlFor='email'>Email address:</label> <br />
         <input

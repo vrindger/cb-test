@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Login from './views/auth/Login';
 import Signup from './views/auth/Signup';
@@ -10,12 +10,12 @@ const App = () => {
     <div className='App'>
       <Router>
         <Navbar />
-        <Routes>
+        <Switch>
           <Route path='/login' component={Login} exact />
           <Route path='/signup' component={Signup} exact />
           <Route path='/logout' component={Logout} exact />
           <Route path='/dashboard' component={Dashboard} exact />
-        </Routes>
+        </Switch>
       </Router>
     </div>
   );
