@@ -5,6 +5,7 @@ This project uses Python, Django, DRF and React to create a user authentication 
 # Getting started
 
 Use the following commands:
+###### `pip install -r requirements.txt`
 ###### `python manage.py runserver` - to start the django server at port 8000
 ###### `cd frontend`
 ###### `npm install`
