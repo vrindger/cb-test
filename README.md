@@ -19,7 +19,7 @@ Log in
 ##### `/logout`
 Log out a user
 ##### `/dashboard`
-Empty page displayed upon login
+Hello user page displayed upon login
 
 ![image](https://user-images.githubusercontent.com/58531716/156991545-10f47e3c-cbd9-4c35-a38e-20a69cbc4c09.png)
 ![image](https://user-images.githubusercontent.com/58531716/156991691-0b0844d6-f656-4a17-ba51-21fb86307f89.png)
