@@ -13,7 +13,7 @@ Use the following commands:
 
 ## APIs are:
 ##### `/signup`
-Sign up with an email and passwords with confirmation
+Sign up with an email and password with confirmation. Password needs to be alphanumeric and both upper and lower case letters.
 ##### `/login`
 Log in
 ##### `/logout`
