@@ -34,46 +34,8 @@ function Dashboard() {
           setLoading(false);
         });
     }
-    refreshMessages();
   }, []);
-  
-  
 
-  const refreshMessages = () => {
-    API.get("/api/message")
-      .then((res) => {
-        setMyMessages(res.data);
-        // setSenderEmail(res[0].sender_email)
-        // setRecipientEmail(res[0].recipient_email)
-        // setTitle(res[0].title)
-        // setMessageId(res[0].id)
-      })
-      .catch(console.error);
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    let item = { sender_email, recipient_email, title, message_body};
-    API.post("/messages", item).then(() => refreshMessages());
-  };
-
-  const onUpdate = (id) => {
-    let item =  { sender_email, recipient_email, title, message_body};
-    API.patch(`/${id}/`, item).then((res) => refreshMessages());
-  };
-
-  const onDelete = (id) => {
-    API.delete(`/${id}/`).then((res) => refreshMessages());
-  };
-
-  function selectMessage(id) {
-    let item = mymessages.filter((message) => message.id === id)[0];
-    setSenderEmail(item.sender_email);
-    setRecipientEmail(item.recipient_email);
-    setTitle(item.title);
-    setMessageBody(item.message_body)
-    setMessageId(item.id);
-  }
   return (
     
     <div id='dash'>

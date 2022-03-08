@@ -32,11 +32,6 @@ const MyMessages = ({ onAdd }) => {
     API.post("/api/message/", item).then(() => refreshMessages());
   };
 
-  const onUpdate = (id) => {
-    let item =  { sender_email, recipient_email, title, message_body};
-    API.patch(`/${id}/`, item).then((res) => refreshMessages());
-  };
-
   const onDelete = (id) => {
     API.delete(`/${id}/`).then((res) => refreshMessages());
   };
@@ -86,8 +81,8 @@ const MyMessages = ({ onAdd }) => {
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicStarring">
-              <Form.Label>MessageBody</Form.Label>
+            <Form.Group className="mb-3" controlId="formBasicMessageBody">
+              <Form.Label>Message Body</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Message body:"
@@ -105,14 +100,14 @@ const MyMessages = ({ onAdd }) => {
               >
                 Save
               </Button>
-              <Button
+              {/* <Button
                 variant="primary"
                 type="button"
                 onClick={() => onUpdate(message_id)}
                 className="mx-2"
               >
                 Update
-              </Button>
+              </Button> */}
             </div>
           </Form>
         </div>
@@ -131,7 +126,7 @@ const MyMessages = ({ onAdd }) => {
             <tbody>
               {mymessages.map((message, index) => {
                 return (
-                  <tr key="">
+                  <tr key={message.id}>
                     <th scope="row">{message.id}</th>
                     <td> {message.sender_email}</td>
                     <td>{message.recipient_email}</td>
