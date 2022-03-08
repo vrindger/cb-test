@@ -1,11 +1,11 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Login from './views/auth/Login';
 import Signup from './views/auth/Signup';
 import Logout from './views/auth/Logout';
 import Dashboard from './views/app/Dashboard';
 
-const App = () => {
+function App() {
   return (
     <div className='App'>
       <Router>
