@@ -15,7 +15,7 @@ Use the following commands:
 
 ## APIs are:
 ##### `/auth` - GET Django REST Auth
-##### `/auth/register - POST Django REST Auth registration
-##### Message CRUD API /api/message
+##### `/auth/register` - POST Django REST Auth registration
+##### `/api/message` - Message CRUD API 
 
 ![image](https://user-images.githubusercontent.com/58531716/157402914-57358e66-0c56-452c-97e4-7b1f52fe3f14.png)
