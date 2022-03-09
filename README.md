@@ -6,14 +6,16 @@ This project uses Python, Django, DRF and React to create a user authentication 
 
 Use the following commands:
 ###### `pip install -r requirements.txt`
+###### `python manage.py makemigrations messaging` - to make migrations
+###### `python manage.py migrate` - to apply
 ###### `python manage.py runserver` - to start the django server at port 8000
 ###### `cd frontend`
 ###### `npm install`
 ###### `npm start` - to start the react app at port 3000
 
 ## APIs are:
-##### `/auth` - Django REST Auth
-##### `/auth/register - Django REST Auth registration
+##### `/auth` - GET Django REST Auth
+##### `/auth/register - POST Django REST Auth registration
+##### Message CRUD API /api/message
 
-![image](https://user-images.githubusercontent.com/58531716/156991545-10f47e3c-cbd9-4c35-a38e-20a69cbc4c09.png)
-![image](https://user-images.githubusercontent.com/58531716/156991691-0b0844d6-f656-4a17-ba51-21fb86307f89.png)
+![image](https://user-images.githubusercontent.com/58531716/157402914-57358e66-0c56-452c-97e4-7b1f52fe3f14.png)
