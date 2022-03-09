@@ -8,18 +8,22 @@ function Dashboard() {
   // Users auth
   const [userEmail, setUserEmail] = useState('');
   const [loading, setLoading] = useState(true);
-  
-  // Frontend 
-  const [message_id, setMessageId] = useState(null);
-  const [sender_email, setSenderEmail] = useState("");
-  const [recipient_email, setRecipientEmail] = useState("");
-  const [title, setTitle] = useState("");
-  const [message_body, setMessageBody] = useState("");
-  const [mymessages, setMyMessages] = useState([]);
+
+  // Attempt to send user email back to Axios
+  // const postUserEmail = () => {
+  //   var user_email =  sessionStorage.getItem("user_email");
+  //   let item = { user_email  };
+  //   API.post("/api/user_email", item)  
+  //   .then(function (res) {
+  //     console.log("result: " + res);
+  //     return res;
+  // })
+  // };
 
   useEffect(() => {
     if (localStorage.getItem('token') === null) {
       window.location.replace('http://localhost:3000/login');
+      sessionStorage.clear();
     } else {
       fetch('http://127.0.0.1:8000/api/v1/users/auth/user/', {
         method: 'GET',
@@ -32,7 +36,13 @@ function Dashboard() {
         .then(data => {
           setUserEmail(data.email);
           setLoading(false);
+          // Unable to use this session variable in backend 
+          sessionStorage.setItem("user_email", data.email);
+          //postUserEmail();
         });
+        
+          
+        
     }
   }, []);
 

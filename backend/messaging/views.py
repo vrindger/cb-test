@@ -2,20 +2,21 @@ from django.shortcuts import render
 from rest_framework import generics
 from .serializers import MessageSerializer
 from .models import Message
-
-# Create your views here.
+from django.db.models import Q
+from  sys import stderr
+from rest_framework.authtoken.models import Token
+from re import sub
 
 class MessageListCreate(generics.ListCreateAPIView):
-    queryset = Message.objects.all()
-    serializer_class = MessageSerializer
-
-class MessageInboxCreate(generics.ListAPIView):
-    serializer_class = MessageSerializer
     
+
+    # queryset = Message.objects.all()
     def get_queryset(self):
         """
-        This view should return a list of all the purchases
+        This  should return a list of all the messages
         for the currently authenticated user.
         """
-        user = self.request.user
-        return Message.objects.filter(sender_email=user)
+        
+        return Message.objects.all() #filter(Q(sender_email=user) | Q(receiver_email=user)).order_by('-id')
+    
+    serializer_class = MessageSerializer

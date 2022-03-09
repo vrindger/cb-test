@@ -10,18 +10,18 @@ const MyMessages = ({ onAdd }) => {
   const [message_body, setMessageBody] = useState("");
   const [mymessages, setMyMessages] = useState([]);
 
+ 
+  
   useEffect(() => {
     refreshMessages();
   }, []);
+
+  
 
   const refreshMessages = () => {
     API.get("/api/message/")
       .then((res) => {
         setMyMessages(res.data);
-        // setSenderEmail(res[0].sender_email)
-        // setRecipientEmail(res[0].recipient_email)
-        // setTitle(res[0].title)
-        // setMessageId(res[0].id)
       })
       .catch(console.error);
   };
@@ -80,6 +80,7 @@ const MyMessages = ({ onAdd }) => {
                 onChange={(e) => setTitle(e.target.value)}
               />
             </Form.Group>
+        
 
             <Form.Group className="mb-3" controlId="formBasicMessageBody">
               <Form.Label>Message Body</Form.Label>
@@ -98,7 +99,7 @@ const MyMessages = ({ onAdd }) => {
                 onClick={onSubmit}
                 className="mx-2"
               >
-                Save
+                Send
               </Button>
               {/* <Button
                 variant="primary"
@@ -131,6 +132,7 @@ const MyMessages = ({ onAdd }) => {
                     <td> {message.sender_email}</td>
                     <td>{message.recipient_email}</td>
                     <td>{message.title}</td>
+                    <td>{message.message_body}</td>
                     <td>
                       <i
                         className="fa fa-pencil-square text-primary d-inline"
